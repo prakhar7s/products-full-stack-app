@@ -1,0 +1,10 @@
+.item-card:hover .overlay-buttons {
+  display: flex !important;
+}
+
+.overlay-button {
+  background: #a7a2a220;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #57555510;
+}
