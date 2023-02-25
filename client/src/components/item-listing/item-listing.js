@@ -8,6 +8,7 @@ const ItemListing = (props) => {
   const { fetchItemList, itemsList } = props;
   const [displayFormModal, setFormModal] = useState(false);
   const [editItemConfig, setEditItemConfig] = useState(null);
+
   useEffect(() => {
     if (!itemsList) fetchItemList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,6 +35,7 @@ const ItemListing = (props) => {
         editItemConfig={editItemConfig}
         setEditItemConfig={setEditItemConfig}
       />
+
       <div className="mt-4 d-flex justify-content-between">
         <p className="m-0 fs-18 fw-500">Products</p>
         <button

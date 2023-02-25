@@ -2,13 +2,18 @@ import "./App.css";
 import Loader from "./components/loader/loader";
 import { MainPage } from "./pages/main";
 import { connect } from "react-redux";
+import { ErrorBoundary } from "./utils/error-boundry";
+import { Toaster } from "react-hot-toast";
 
 function App(props) {
   const { loading } = props;
   return (
     <div>
-      {loading && <Loader />}
-      <MainPage />
+      <ErrorBoundary>
+        <Toaster />
+        {loading && <Loader />}
+        <MainPage />
+      </ErrorBoundary>
     </div>
   );
 }

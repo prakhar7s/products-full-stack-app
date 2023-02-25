@@ -1,3 +1,4 @@
+import { showToast } from "../../utils/app-utils";
 import itemActionTypes from "../action-types/item.actionTypes";
 
 const initialState = {
@@ -13,6 +14,8 @@ export default function itemReducer(state = initialState, action) {
     case itemActionTypes.UPDATE_ITEM_SUCCESS:
     case itemActionTypes.DELETE_ITEM_SUCCESS:
     case itemActionTypes.ADD_ITEM_SUCCESS:
+      showToast(type);
+
       return {
         ...state,
         itemsList: response?.items,

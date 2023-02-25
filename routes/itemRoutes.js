@@ -1,14 +1,16 @@
 const { Router } = require("express");
 const { APIS } = require("../constants/serverConstannts");
 const itemController = require("../controllers/itemController");
+require("dotenv").config();
+
 var multer = require("multer");
 var cloudinary = require("cloudinary").v2;
 const router = Router();
 
 cloudinary.config({
-  cloud_name: "dxvbqpnsf",
-  api_key: "833154645972792",
-  api_secret: "zjS1UD10rVpNA_dXqOr6n0eCVVg",
+  cloud_name: process.env.CLOUDINARY_BUCKET_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 var storage = multer.diskStorage({
